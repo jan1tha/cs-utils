@@ -11,9 +11,8 @@ In the `id-token-decryptor` directory, run the following to install required dep
 ```
 npm install jose
 npm install node-jose
+npm install jsonwebtoken
 ```
-
-(node_modules.zip file contains the dependencies required at the moment. You may unzip the directory if the node modules do not work) 
 
 ## Configuration
 
@@ -29,7 +28,32 @@ node decrypt.js
 - You will get an output like below,
 
 ```markdown
-{ kid: 'adr-123', cty: 'JWT', enc: 'A128CBC-HS256', alg: 'RSA-OAEP' }
-eyJ4NXQiOiJNREpsTmpJeE4yRTFPR1psT0dWbU1HUXhPVEZsTXpCbU5tRmpaalEwWTJZd09HWTBOMkkwWXpFNFl6WmpOalJoWW1SbU1tUTBPRGRpTkRoak1HRXdNQSIsImtpZCI6Ik1ESmxOakl4TjJFMU9HWmxPR1ZtTUdReE9URmxNekJtTm1GalpqUTBZMll3T0dZME4ySTBZekU0WXpaak5qUmhZbVJtTW1RME9EZGlORGhqTUdFd01BX1BTMjU2IiwiYWxnIjoiUFMyNTYifQ.eyJpc2siOiI4ZTMzN2EyNGY5MmRhNDg4N2ZjNWEyYTQ2ZTQ4ZTgwYWFjNjlmMzhmNzFhZDEyZjk5ZGUwYTk1MDgxMjZhYTAxIiwiYXRfaGFzaCI6IklYWVpqWjdvMGRRX3dqOXhybnlBQmciLCJzdWIiOiI0MDAxMjM0NTY3OCIsImFtciI6WyJJZGVudGlmaWVyRXhlY3V0b3JDRFMiLCJTTVNPVFBDRFMiXSwiaXNzIjoiaHR0cHM6XC9cL2xvY2FsaG9zdDo5NDQ2XC9vYXV0aDJcL3Rva2VuIiwiZ2l2ZW5fbmFtZSI6Ikphbml0aGEiLCJub25jZSI6IkdwS1hrMUZ2SG8iLCJzaWQiOiIwNDIyN2MxOC02NzQwLTQxMDUtYTQ3My01ZDNlMjRmNDYxYTEiLCJhdWQiOiJmWGVqZHJWNjloZk1KVEY0Ujk2MlZwUmdmUHdhIiwiYWNyIjoidXJuOmNkcy5hdTpjZHI6MiIsImNfaGFzaCI6IjF2UUg1NTlTckxaUWE2T3dHNnQzN3ciLCJuYmYiOjE3MjQ0MDI5NzksInVwZGF0ZWRfYXQiOjE3MTg5MDgyMDAsImF6cCI6ImZYZWpkclY2OWhmTUpURjRSOTYyVnBSZ2ZQd2EiLCJhdXRoX3RpbWUiOjE3MjQ0MDI5NTksIm5hbWUiOiJKYW5pdGhhIFNlbmV2aXJhdGhuYSIsImV4cCI6MTcyNDQwNjU3OSwiaWF0IjoxNzI0NDAyOTc5LCJmYW1pbHlfbmFtZSI6IlNlbmV2aXJhdGhuYSIsImp0aSI6IjFjMWYwM2I5LTMwZTUtNDRmOS04MzQxLTc0Y2UyZDU1MWZlMiJ9.NsW_iottWEkFU7SLXNXdTWOOhjuI_zwRFAh9IHihArYbrQm6IrTgZwae6IHNzU48fNJhfGqW4zPQAFG2CmZn7Ra9a2rX-423ApeFC7ZJYGpLCyFFRhi-N98LZz35BgAVir6IaawXOT7oOo9cr_jml8f_kRYhJHKboZJtHYcaMIIGhVX39U_kia_FOpSa-G59unFGD8Itwl2eGKxcXLJFYNSkVbvq1aASfmPymZY44yjSipajFVZVHUFCrRxBLhYBpKrDBVm2U_KVUIGdreV-ilpK23UYGCh6WYKZeoXwxl6la2IA_T9za4NCDC043w6J987V4K9ES4-ktJ0JZuwREA
+Header: {
+  x5t: 'MDJlNjIxN2E1OGZlOGVmMGQxOTFlMzBmNmFjZjQ0Y2YwOGY0N2I0YzE4YzZjNjRhYmRmMmQ0ODdiNDhjMGEwMA',
+  kid: 'MDJlNjIxN2E1OGZlOGVmMGQxOTFlMzBmNmFjZjQ0Y2YwOGY0N2I0YzE4YzZjNjRhYmRmMmQ0ODdiNDhjMGEwMA_PS256',
+  alg: 'PS256'
+}
+Payload: {
+  isk: '8e337a24f92da4887fc5a2a46e48e80aac69f38f71ad12f99de0a9508126aa01',
+  at_hash: 'IXYZjZ7o0dQ_wj9xrnyABg',
+  sub: '40012345678',
+  amr: [ 'IdentifierExecutorCDS', 'SMSOTPCDS' ],
+  iss: 'https://localhost:9446/oauth2/token',
+  given_name: 'Janitha',
+  nonce: 'GpKXk1FvHo',
+  sid: '04227c18-6740-4105-a473-5d3e24f461a1',
+  aud: 'fXejdrV69hfMJTF4R962VpRgfPwa',
+  acr: 'urn:cds.au:cdr:2',
+  c_hash: '1vQH559SrLZQa6OwG6t37w',
+  nbf: 1724402979,
+  updated_at: 1718908200,
+  azp: 'fXejdrV69hfMJTF4R962VpRgfPwa',
+  auth_time: 1724402959,
+  name: 'Janitha Senevirathna',
+  exp: 1724406579,
+  iat: 1724402979,
+  family_name: 'Senevirathna',
+  jti: '1c1f03b9-30e5-44f9-8341-74ce2d551fe2'
+}
 ```
 - Use at will!

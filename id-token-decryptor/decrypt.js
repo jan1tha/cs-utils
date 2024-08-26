@@ -1,7 +1,8 @@
 const jose = require('node-jose');
 const fs = require('fs');
-const { parseJwk } = require('jose/jwk/parse')
-const { compactDecrypt } = require('jose/jwe/compact/decrypt')
+const { parseJwk } = require('jose/jwk/parse');
+const { compactDecrypt } = require('jose/jwe/compact/decrypt');
+const jwt = require('jsonwebtoken');
 
 // Example usage - replace with your actual private key
 const rsaPrivateKeyStr = `
@@ -38,10 +39,11 @@ async function decryptIdToken(encrypted, pemKey) {
               encrypted,
               privateKey
           );
-      const decoder = new TextDecoder()
 
-      console.log(protectedHeader)
-      console.log(decoder.decode(plaintext))
+      const decoder = new TextDecoder()
+      const decoded = jwt.decode(decoder.decode(plaintext), { complete: true });
+      console.log('Header:', decoded.header);
+      console.log('Payload:', decoded.payload);
 
   } catch (err) {
       console.error('Error converting private key to JWK:', err);
