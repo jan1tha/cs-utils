@@ -1,0 +1,35 @@
+# id-token-decryptor
+
+## Pre requisites
+
+id-token-decryptor requires [Node.js](https://nodejs.org/) to run.
+
+## Installation
+
+In the `id-token-decryptor` directory, run the following to install required dependencies
+
+```
+npm install jose
+npm install node-jose
+```
+
+(node_modules.zip file contains the dependencies required at the moment. You may unzip the directory if the node modules do not work) 
+
+## Configuration
+
+- Open `decrypt.js`
+- Modify the `const encryptedIdToken` value and add the required token you need to decrypt 
+- Modify the `const rsaPrivateKeyStr` to include the private key of associated token
+- Save the modifications
+- Run the decryptor using the following command,
+
+```
+node decrypt.js
+```
+- You will get an output like below,
+
+```markdown
+{ kid: 'adr-123', cty: 'JWT', enc: 'A128CBC-HS256', alg: 'RSA-OAEP' }
+eyJ4NXQiOiJNREpsTmpJeE4yRTFPR1psT0dWbU1HUXhPVEZsTXpCbU5tRmpaalEwWTJZd09HWTBOMkkwWXpFNFl6WmpOalJoWW1SbU1tUTBPRGRpTkRoak1HRXdNQSIsImtpZCI6Ik1ESmxOakl4TjJFMU9HWmxPR1ZtTUdReE9URmxNekJtTm1GalpqUTBZMll3T0dZME4ySTBZekU0WXpaak5qUmhZbVJtTW1RME9EZGlORGhqTUdFd01BX1BTMjU2IiwiYWxnIjoiUFMyNTYifQ.eyJpc2siOiI4ZTMzN2EyNGY5MmRhNDg4N2ZjNWEyYTQ2ZTQ4ZTgwYWFjNjlmMzhmNzFhZDEyZjk5ZGUwYTk1MDgxMjZhYTAxIiwiYXRfaGFzaCI6IklYWVpqWjdvMGRRX3dqOXhybnlBQmciLCJzdWIiOiI0MDAxMjM0NTY3OCIsImFtciI6WyJJZGVudGlmaWVyRXhlY3V0b3JDRFMiLCJTTVNPVFBDRFMiXSwiaXNzIjoiaHR0cHM6XC9cL2xvY2FsaG9zdDo5NDQ2XC9vYXV0aDJcL3Rva2VuIiwiZ2l2ZW5fbmFtZSI6Ikphbml0aGEiLCJub25jZSI6IkdwS1hrMUZ2SG8iLCJzaWQiOiIwNDIyN2MxOC02NzQwLTQxMDUtYTQ3My01ZDNlMjRmNDYxYTEiLCJhdWQiOiJmWGVqZHJWNjloZk1KVEY0Ujk2MlZwUmdmUHdhIiwiYWNyIjoidXJuOmNkcy5hdTpjZHI6MiIsImNfaGFzaCI6IjF2UUg1NTlTckxaUWE2T3dHNnQzN3ciLCJuYmYiOjE3MjQ0MDI5NzksInVwZGF0ZWRfYXQiOjE3MTg5MDgyMDAsImF6cCI6ImZYZWpkclY2OWhmTUpURjRSOTYyVnBSZ2ZQd2EiLCJhdXRoX3RpbWUiOjE3MjQ0MDI5NTksIm5hbWUiOiJKYW5pdGhhIFNlbmV2aXJhdGhuYSIsImV4cCI6MTcyNDQwNjU3OSwiaWF0IjoxNzI0NDAyOTc5LCJmYW1pbHlfbmFtZSI6IlNlbmV2aXJhdGhuYSIsImp0aSI6IjFjMWYwM2I5LTMwZTUtNDRmOS04MzQxLTc0Y2UyZDU1MWZlMiJ9.NsW_iottWEkFU7SLXNXdTWOOhjuI_zwRFAh9IHihArYbrQm6IrTgZwae6IHNzU48fNJhfGqW4zPQAFG2CmZn7Ra9a2rX-423ApeFC7ZJYGpLCyFFRhi-N98LZz35BgAVir6IaawXOT7oOo9cr_jml8f_kRYhJHKboZJtHYcaMIIGhVX39U_kia_FOpSa-G59unFGD8Itwl2eGKxcXLJFYNSkVbvq1aASfmPymZY44yjSipajFVZVHUFCrRxBLhYBpKrDBVm2U_KVUIGdreV-ilpK23UYGCh6WYKZeoXwxl6la2IA_T9za4NCDC043w6J987V4K9ES4-ktJ0JZuwREA
+```
+- Use at will!
