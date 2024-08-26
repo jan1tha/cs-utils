@@ -29,9 +29,8 @@ async function decryptIdToken(encrypted, pemKey) {
 
       const jwkString = JSON.stringify(jwk, null, 2);
       // Output the JWK format with the additional "alg" field
-      // console.log("=========JWK=========");
-      // console.log(jwk);
-      // console.log("=========JWK=========");
+
+
       const privateKey = await parseJwk(jwk);
 
       const { plaintext, protectedHeader } = await compactDecrypt
@@ -42,8 +41,10 @@ async function decryptIdToken(encrypted, pemKey) {
 
       const decoder = new TextDecoder()
       const decoded = jwt.decode(decoder.decode(plaintext), { complete: true });
-      console.log('Header:', decoded.header);
-      console.log('Payload:', decoded.payload);
+//      console.log('Header:', decoded.header);
+//      console.log('Payload:', decoded.payload);
+//      console.log(decoded);
+      console.log(decoded.payload);
 
   } catch (err) {
       console.error('Error converting private key to JWK:', err);
