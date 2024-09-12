@@ -27,7 +27,7 @@ node decrypt.js
 ```
 - You will get an output like below,
 
-```json lines
+```
 {
     isk: '8e337a24f92da4887fc5a2a46e48e80aac69f38f71ad12f99de0a9508126aa01',
     at_hash: 'IXYZjZ7o0dQ_wj9xrnyABg',
